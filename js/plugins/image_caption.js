@@ -62,6 +62,13 @@
   $.Editable.prototype.removeImage = function() {
     if (!this.options.imageCaption)
       return originalRemoveImage.call(this);
+    var $image_editor = this.$element.find('span.f-img-editor'),
+      message = 'Are you sure? Image will be deleted.';
+    if ($.Editable.LANGS[this.options.language]) {
+      message = $.Editable.LANGS[this.options.language].translation[message];
+    }
+    if (!confirm(message))
+      return $image_editor.find('img').click();
     var $image_editor = this.$element.find('span.f-img-editor');
     if ($image_editor.length === 0) return false;
     var $img_parent = $image_editor.parents('.thumbnail');
@@ -96,6 +103,8 @@
   $.Editable.prototype.initCaptions = function() {
     if (!this.options.imageCaption)
       return;
+    this.options.imageMove = false;
+    this.options.imageDeleteConfirmation = false;
     this.initImageCaptionEvents();
     this.addCaptionField();
     this.bindKeyboardCaptionDeletionHandler();
