@@ -1,0 +1,18 @@
+# Froala Image Caption Plugin
+
+This plugin allows you to easily add caption to images when editing with the Froala WYSIWYG editor. To get started, just register image_caption.js and image_caption.css:
+
+```
+<!-- Register Froala and FontAwesome CSS here -->
+<link rel="stylesheet" type="text/css" href="css/image_caption.css">
+<!-- Register jQuery and Froala editor JavaScript here -->
+<script src="js/plugins/image_caption.js"></script>
+```
+
+After uploading an image, the image editor will look like this:
+
+![Image editor with caption field](http://i.imgur.com/QHZTeHW.png)
+
+After setting a caption and clicking "OK," your image will look like this in the editor:
+
+![Image with caption](http://i.imgur.com/pSQPeTX.png)
