@@ -1,3 +1,8 @@
+/*!
+ * Froala Image Caption Plugin
+ * Written by Matt Dziuban (http://mattdziuban.com)
+ * Tested with Froala v1.2.3 and v1.2.4 (http://editor.froala.com)
+ */
 (function ($) {
   $.Editable.DEFAULTS = $.extend($.Editable.DEFAULTS, {
     imageCaption: true
