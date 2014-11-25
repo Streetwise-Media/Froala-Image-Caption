@@ -51,6 +51,9 @@
 .post-caption-container .thumbnail .f-img-editor {
   margin: 0 !important;
 }
+.post-caption-container .thumbnail br {
+  display: none !important;
+}
 .thumbnail .caption {
   padding: 5px;
   color: #777;

@@ -91,7 +91,8 @@
       else {
         var classes = 'thumbnail clearfix '+this.getImageClass($image.attr('class'));
         var captionHtml = '<div class="post-caption-container"><figure class="'+classes+'">'+$image.get(0).outerHTML
-          +'<figcaption class="caption pull-center" style="width:'+($image.attr('width')-18)+'px">'+captionText+'</figcaption></figure></div>';
+          +'<figcaption class="caption pull-center" contenteditable="false" style="width:'+($image.attr('width')-18)+'px">'+captionText
+          +'</figcaption></figure></div>';
         if ($image.parent().children().length > 1)
           $image.replaceWith(captionHtml);
         else
