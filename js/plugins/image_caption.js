@@ -68,7 +68,6 @@
     }
     if (!confirm(message))
       return $image_editor.find('img').click();
-    var $image_editor = this.$element.find('span.f-img-editor');
     if ($image_editor.length === 0) return false;
     var $img_parent = $image_editor.parents('.thumbnail');
     originalRemoveImage.call(this);
