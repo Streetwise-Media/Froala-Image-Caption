@@ -8,6 +8,8 @@
     imageCaption: true
   });
 
+  $.Editable.VALID_NODES = $.merge($.Editable.VALID_NODES, ['FIGURE','FIGCAPTION']);
+
   $.Editable.prototype.initImageCaptionEvents = function() {
     var that = this;
     this.$element.on('click touchend', 'img:not([contenteditable="false"])', function(e) {
