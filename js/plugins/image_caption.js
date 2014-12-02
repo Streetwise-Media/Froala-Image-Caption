@@ -28,10 +28,7 @@
       return;
     if ($obj.closest('.thumbnail').length > 0) {
       originalAddImageClass($obj.closest('.thumbnail'), cls);
-      if (cls == 'fr-fin')
-        $obj.closest('.thumbnail').find('.caption').css('width', 'auto');
-      else
-        $obj.closest('.thumbnail').find('.caption').css('width', ($obj.attr('width')-18)+'px')
+      $obj.closest('.thumbnail').find('.caption').css('width', ($obj.attr('width')-18)+'px')
     }
   };
 
@@ -113,7 +110,7 @@
     this.bindKeyboardCaptionDeletionHandler();
     this.$original_element.on('editable.imageResize', function(e) {
       var $imgEditor = $('.f-img-editor');
-      if ($imgEditor.closest('.thumbnail').length == 0 || $imgEditor.find('img').hasClass('fr-fin'))
+      if ($imgEditor.closest('.thumbnail').length == 0)
         return;
       $imgEditor.closest('.thumbnail').find('.caption').css('width', ($imgEditor.find('img').attr('width')-18)+'px');
     });
