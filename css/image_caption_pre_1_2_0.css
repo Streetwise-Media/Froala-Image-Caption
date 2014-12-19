@@ -1,0 +1,79 @@
+/*!
+ * Froala Image Caption Plugin
+ * Written by Matt Dziuban (http://mattdziuban.com)
+ * Works with versions of Froala < v1.2.0 (http://editor.froala.com)
+ */
+.post-caption-container {
+  text-align: center;
+}
+.post-caption-container .thumbnail {
+  margin: 10px;
+  margin-bottom: 10px !important;
+  max-width: 100%;
+  line-height: 1.25em;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  display: inline-block !important;
+  /* IE7 inline-block hack */
+  *display: inline;
+  *zoom: 1;
+}
+.post-caption-container .thumbnail.fr-fil {
+  float: left;
+  margin: 10px 10px 10px 0;
+}
+.post-caption-container .thumbnail.fr-fir {
+  float: right;
+  margin: 10px 0 10px 10px;
+}
+.post-caption-container .thumbnail.fr-fin {
+  float: none;
+}
+.post-caption-container .thumbnail img {
+  margin: 0 !important;
+}
+.post-caption-container .thumbnail .caption {
+  clear: both;
+}
+.post-caption-container .thumbnail .f-img-editor {
+  margin: 0 !important;
+}
+.post-caption-container .thumbnail br {
+  display: none !important;
+}
+.thumbnail .caption {
+  padding: 5px;
+  color: #777;
+  font-size: 11pt;
+  line-height: 1.25em;
+  font-style: italic;
+}
+.fr-fil, img.fr-fil {
+  margin:4px 20px 10px 0;
+}
+.fr-fir, img.fr-fir {
+  margin:4px 0 10px 20px;
+}
+.fr-fin, img.fr-fin {
+  clear: both;
+  display: block;
+  margin: 10px auto;
+}
+.f-img-editor.fr-fil {
+  float: left;
+}
+.f-img-editor.fr-fir {
+  float: right;
+}
+.f-img-editor.fr-fin {
+  float: none;
+}
+.f-img-editor img {
+  margin: 0 !important;
+}
