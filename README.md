@@ -22,3 +22,5 @@ Features include:
 - Ability to delete the caption by setting the text empty in the image editor or by deleting the caption text itself in the editor
 - Ability to disable the image caption plugin by setting `imageCaption: false` when initializing the editor
 	- This is useful when there is more than one editor instance on one page
+
+NOTE: If you're using a version of Froala below v1.2.0, use the *_pre_1_2_0 versions of the JS and CSS files.
