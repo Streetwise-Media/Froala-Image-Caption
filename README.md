@@ -17,6 +17,8 @@ After setting a caption and clicking "OK," your image will look like this in the
 
 ![Image with caption](http://i.imgur.com/pSQPeTX.png)
 
+For an example, open `example.html` in your browser.
+
 Features include:
 - Resizing of the caption/thumbnail container when resizing the image
 - Ability to delete the caption by setting the text empty in the image editor or by deleting the caption text itself in the editor
