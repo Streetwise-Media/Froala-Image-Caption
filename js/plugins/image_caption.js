@@ -1,7 +1,7 @@
 /*!
  * Froala Image Caption Plugin
  * Written by Matt Dziuban (http://mattdziuban.com)
- * Tested with Froala v1.2.3 and v1.2.4 (http://editor.froala.com)
+ * Tested with Froala v1.2.3, v1.2.4, and v1.2.5 (http://editor.froala.com)
  */
 (function ($) {
   $.Editable.DEFAULTS = $.extend($.Editable.DEFAULTS, {
@@ -58,9 +58,9 @@
   };
 
   var originalRemoveImage = $.Editable.prototype.removeImage;
-  $.Editable.prototype.removeImage = function() {
+  $.Editable.prototype.removeImage = function($img) {
     if (!this.options.imageCaption)
-      return originalRemoveImage.call(this);
+      return originalRemoveImage.call(this, $img);
     var $image_editor = this.$element.find('span.f-img-editor'),
       message = 'Are you sure? Image will be deleted.';
     if ($.Editable.LANGS[this.options.language]) {
@@ -70,7 +70,7 @@
       return $image_editor.find('img').click();
     if ($image_editor.length === 0) return false;
     var $img_parent = $image_editor.parents('.thumbnail');
-    originalRemoveImage.call(this);
+    originalRemoveImage.call(this, $img);
     if ($img_parent.length > 0)
       $img_parent.eq(0).remove();
   };
