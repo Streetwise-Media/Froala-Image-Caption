@@ -1,0 +1,17 @@
+{
+    "name": "FroalaImageCaption",
+    "version": "1.0.0",
+    "description": "A beautiful jQuery WYSIWYG HTML text editor. High performance and modern design make it easy to use for developers and loved by users.",
+    "main": [
+        "css/image_caption.css",
+        "js/plugins/image_caption.js"
+    ],
+    "license": "MIT",
+    "keywords": [
+        "froala"
+    ],
+    "dependencies": {
+        "jquery": ">=1.11.0"
+    }
+}
+
