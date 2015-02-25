@@ -1,0 +1,17 @@
+{
+    "name": "FroalaImageCaption",
+    "version": "1.0.0",
+    "description": "An image caption plugin for the Froala WYSIWYG editor",
+    "main": [
+        "css/image_caption.css",
+        "js/plugins/image_caption.js"
+    ],
+    "license": "MIT",
+    "keywords": [
+        "froala"
+    ],
+    "dependencies": {
+        "jquery": ">=1.11.0"
+    }
+}
+
