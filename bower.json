@@ -1,5 +1,5 @@
 {
-    "name": "FroalaImageCaption",
+    "name": "froala-image-caption",
     "version": "1.0.0",
     "description": "An image caption plugin for the Froala WYSIWYG editor",
     "main": [
