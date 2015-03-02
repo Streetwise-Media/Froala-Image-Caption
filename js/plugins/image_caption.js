@@ -1,7 +1,7 @@
 /*!
  * Froala Image Caption Plugin
  * Written by Matt Dziuban (http://mattdziuban.com)
- * Tested with Froala v1.2.3, v1.2.4, and v1.2.5 (http://editor.froala.com)
+ * Tested with Froala v1.2.3 - v1.2.6 (http://editor.froala.com)
  */
 (function ($) {
   $.Editable.DEFAULTS = $.extend($.Editable.DEFAULTS, {
@@ -18,6 +18,16 @@
       else
         var caption = '';
       that.$image_editor.find('.f-image-caption textarea').val(caption);
+    });
+    this.$element.on('drop', function(e) {
+      var $img = that.$element.find('.fr-image-dropped');
+      if ($img.length == 0 || !$img.attr('data-ref-id') || $($img.data('ref-id')).length == 0)
+        return;
+      var $captionContainer = $($img.data('ref-id'));
+      $captionContainer.remove();
+      $captionContainer.find('img').remove();
+      $captionContainer.find('.thumbnail').prepend($img.get(0).outerHTML);
+      $img.replaceWith($captionContainer);
     });
   };
 
@@ -88,7 +98,8 @@
         $image.closest('.thumbnail').find('.caption').text(captionText);
       else {
         var classes = 'thumbnail clearfix '+this.getImageClass($image.attr('class'));
-        var captionHtml = '<div class="post-caption-container"><figure class="'+classes+'">'+$image.get(0).outerHTML
+        var refId = 'img-'+(new Date()).getTime();
+        var captionHtml = '<div class="post-caption-container" id="'+refId+'"><figure class="'+classes+'">'+$image.attr('data-ref-id', '#'+refId).get(0).outerHTML
           +'<figcaption class="caption pull-center" contenteditable="false" style="width:'+($image.attr('width')-18)+'px">'+captionText
           +'</figcaption></figure></div>';
         if ($image.parent().children().length > 1)
@@ -102,7 +113,6 @@
   $.Editable.prototype.initCaptions = function() {
     if (!this.options.imageCaption)
       return;
-    this.options.imageMove = false;
     this.options.imageDeleteConfirmation = false;
     this.initImageCaptionEvents();
     this.addCaptionField();
